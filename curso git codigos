@@ -1,0 +1,148 @@
+git iniciar
+
+git init = comenzar git en la pc
+git status = estado del repositorio
+git add nombre del archivo = cambios a confirmar (lo manda a stadding area)
+git commit -m "titulo descriptivo"
+git config --global user.email "migue16v3lasco@gmail.com"
+git config --global user.name "Miguel velasco"
+git commit -m "titulo descriptivo"
+git log = ver los commit
+git status = ver la modificacion 
+git add titulo de archivo = siempre que haces un cambio
+git commit -m "titulo de a modificacion"
+git log = ver los commit
+git checkout sdsdvs(numero de commit)= volver al commit deseado [ver las modificacion]
+git checkout master (nombre de la rama) = para volver a realizar cambios
+=============================================================
+DESHACER CAMBIOS
+git reset bb55 = como si no hubieramos hecho un commit pero los cambios los matenemos
+git add titulo del archivo(index.html) = para añadir
+git log = ver los commit
+git status = ver los cambios
+git commit -m "descripcion"
+=========
+BORRAR 
+git log --oneline = mostrar los commit en una sola linea
+rm index.html
+git restore index.html
+git reset hard
+rm -r .git (borrar TODO)
+==================================
+git add. = meter todo al stading area
+git mommit -m "titulo"
+git log --oneline
+=================================
+github.com
+crear repositorio
+colocar nombre de repositorio
+public = para verla todo el mundo
+-no seleccionar nada 
+==============================
+añadir a github con un archivo ya existente
+servidor ssh
+git remote add origin git@github.com:miguelvelascoo/curo/git.git = añadir el servidor remoto
+git remote -v = 
+create key github ssh (google)= solicitar clave ssh terminal de gir
+ssh-keygen -t ed25519 -c "migue16velasco@gmail.com" = buscar en internet (lo da create key)
+crear contraseña = la que quieras
+git push  = colocar en github
+git push -u origin master = colocar el origen
+cd = terminal de git
+cd .ssh = terminal de git
+ls = terminal de git
+cat id_ed255.pub = terminal de git
+ssh keys (github) = lo subes a github con el id....pub
+git push -u origin master = en vscode(terminal)
+colocar contraseña
+==================================================
+subir los cambios añadidos a github
+git status = para ver los cambios que se ha realizado
+git add . = todos los cambios del directorio
+git commit -m "titulo" = en el titulo dices los cambios que has realizado
+git push = para subir los cambios a github (solo si ya habias escrito con anterioridad el comando master)
+git push -u origin master = subir el contenido por priera vez
+
+=================
+clonar
+eval "$(ssh-agent -s)"
+>eval pid 7657
+ssh-add ~/.ssh/id_ed25519
+clave
+git clone git@github.com: miguelvelasco/curso git(titulo del repositorio)
+recuperar = git clone (direccion de github) terminal de git
+=============================================================
+crear rama
+git checkout -b "titulo (feature-posts-styles)"= crear una rama o cambiar de una rama
+git checkout master = cambiar a la rama principal
+git commit -a -m "add post style" = añadir todo 
+o
+git add nombre.html
+git commit -m "titulo"
+git log --oneline  
+crear rama en github
+git push -u origin nombre de la rama (ejemplo feature-posts-style)
+nota = si me voy a git chechout pierdos los cambios hasta juntarlos todo porque es independiente hasta juntarlos todos
+hacer clik = compare & pull request (github)
+git clone git@github.com: miguelvelasco/curso git(titulo del repositorio) nombre que le queremos dar
+git push = subir el archivo a github
+mezclar = ir a github (pull request )
+mezcar la rama a donde se desear (master < feature.posts-style)
+dar descripcion 
+confirmar
+git pull (en master) = actualizar cambios que se han hecho
+git push -u origin feature-api-post (nombre de la rama) = cuando es por primera vez
+git push
+(master)git add . = añadir todo
+(master)git commit -m "render posts"
+====================================================
+mezcar de forma local sin subirlo a github
+(feature-add)git merge feature-load-adds-from-api(nombre de la rama a mezclar)
+git push -u origin feature-adds
+git log --graph = mostrar todas las ramas y commit
+git lob --graph --online = para mostrar todas las ramas de manera mas resumida
+============================================================
+rebese interactivo
+git checkout -b titulo (feature-affiliate-links) = crea un titulo
+git branch titulo (front) = para crear una rama a partir de (feature-affiliate-links ) y feature-affiliate-links esta creada por master
+git branch titulo back = otro ejemplo
+git add . = para añadir todo
+git commit -m "cambio backend1"
+git commit -a -m "cambio backet2" = git add . + git commit -m titulo
+necesitamos unir todos los commit... hay que mezclar para que solo haya un commit por cada cosa
+1 mezclar front con back..
+(front)git merge back = mezclar las dos ramas
+git log -n 7 --oneline = ver los commit
+(feature-affiliate-links)git rebase -i front= es como trabajar en la misma base y elegir los commit 
+j = para abajo
+k = para arriba
+h = izquieda
+l = derecha
+squeah = mezcla los comi con el anterior
+cw = para editar los cambios
+(escape)esc:wq  = para salir
+dd = para borrar los commit
+colocar solo 1 titulo para los commit 
+git log --oneline -n 6 = ver los commit 
+(rama de los afiliados... feature-affiliate-link)git merge front
+git merge 
+git branch -d front(nombre de la rama) back = borrar todas las ramas que se crearon
+git branch -D front(nombre de la rama) back = borrar todas las ramas que se crearon
+git push -u origin feature-affiliate-link
+=========================================
+squash y merge
+
+git commit --ammend -m "cambios videoss 2 " = para cambiar el nombre de commit anterior siempre y cuando no se haya subied a github
+un las opciones del front hay una que dice squah and merge
+merge pull request =  squah and merge [cambiar]
+git reestore index.js = reestablece los cambios al inicio (como si lo hubiese recien descargado) 
+git help = comandos de commit
+==================================
+git stash = almacenar la informacion sin perderla
+git stash list = ver la lista de stash
+git stash pop = recuparar la informacion sin perderlo ni estarlo en stading area
+=============================
+crear versiones =usuamente cuando no son compatibles 
+git tag -a v-0.1.0 -m "Primera verion del curso"
+v 0 = estan en desarrollo
+git show v0.1.0 = informacion de la version
